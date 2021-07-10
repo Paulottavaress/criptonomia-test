@@ -11,34 +11,5 @@
 </template>
 
 <style scoped>
-/* Footer */
-.footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  height: 200px;
-}
-
-.footer a {
-  color: #fff;
-}
-
-.footer a:hover {
-  color: #28a745;
-}
-
-.footer .social > * {
-  margin-right: 30px;
-}
+  @import './style.scss';
 </style>
