@@ -1,8 +1,14 @@
 <template>
     <div class="column-2">
         <p class="meta">
-            <i class="fas fa-user" :class="[commentId % 2 === 0 ? 'text-light' : 'text-dark']"></i> Posted by 
-            <strong :class="[commentId % 2 === 0 ? 'text-light' : 'text-dark']">{{ commentName }}</strong> | {{ commentEmail }}
+            <i class="fas fa-user" 
+            :class="[commentId % 2 === 0 ? 'text-light' : 'text-dark']">
+            </i> 
+            Posted by 
+            <strong 
+            :class="[commentId % 2 === 0 ? 'text-light' : 'text-dark']">
+            {{ commentName }}
+            </strong> | {{ commentEmail }}
         </p>
         <p class="comment">
             {{ commentBody }}
@@ -40,6 +46,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
     @import './style.scss';
 </style>

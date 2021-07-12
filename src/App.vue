@@ -1,13 +1,13 @@
 <template>
   <Header />
-  <Posts />
+  <router-view></router-view>
   <Footer />
 </template>
 
 <script>
-import Header from './components/Header/index.vue'
-import Footer from './components/Footer/index.vue'
-import Posts from './components/Posts/index.vue'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Posts from './pages/Posts'
 
 export default {
   name: 'App',
