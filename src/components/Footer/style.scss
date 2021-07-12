@@ -14,16 +14,16 @@
             justify-content: center;
     text-align: center;
     height: 200px;
-}
-  
-.footer a {
-color: #fff;
+    a {
+        color: #fff;
+        &:hover {
+            color: #28a745;
+        }
+    }
+    .social > * {
+        margin-right: 30px;
+    }
 }
 
-.footer a:hover {
-color: #28a745;
-}
 
-.footer .social > * {
-margin-right: 30px;
-}
+

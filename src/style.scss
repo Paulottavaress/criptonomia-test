@@ -65,10 +65,9 @@ img {
     background-color: #28a745;
     border: none;
     border-radius: 5px;
-}
-
-.btn:hover {
-    opacity: 0.9;
+    &:hover {
+        opacity: 0.9;
+    }
 }
 
 .btn-primary, .bg-primary {
@@ -112,10 +111,9 @@ img {
     justify-content: center;
     align-items: center;
     height: 100%;
-}
-
-.flex-items > div {
-    padding: 20px;
+    & > div {
+        padding: 20px;
+    }
 }
 
 /* Flex columns */
@@ -156,17 +154,17 @@ img {
     padding: 30px;
 }
 
-.flex-columns h2 {
-    font-size: 40px;
-    font-weight: 100;
-}
-
-.flex-columns h4 {
-    margin-bottom: 10px;
-}
-
-.flex-columns p {
-    margin: 20px 0;
+.flex-columns {
+    h2 {
+        font-size: 40px;
+        font-weight: 100;
+    }
+    h4 {
+        margin-bottom: 10px;
+    }
+    p {
+        margin: 20px 0;
+    }
 }
 
 /* Section header */
@@ -179,9 +177,11 @@ img {
     text-align: center;
 }
 
-.section-header h2 {
-    font-size: 40px;
-    margin: 20px 0;
+.section-header {
+    h2 {
+        font-size: 40px;
+        margin: 20px 0;
+    }
 }
 
 .section-padding {
@@ -212,8 +212,10 @@ img {
     max-width: 100%;
     }
 
-    .flex-columns h2 {
-        font-size: 30px;
+    .flex-columns {
+        h2 {
+            font-size: 30px;
+        }
     }
 }
 
@@ -227,7 +229,9 @@ img {
 .btn {
     padding: 10px;
 }
-.flex-columns h2 {
-    font-size: 25px;
+.flex-columns {
+    h2 {
+        font-size: 25px;
+    }
 }
 }

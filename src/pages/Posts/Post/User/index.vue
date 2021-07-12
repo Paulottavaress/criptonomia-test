@@ -8,7 +8,7 @@
             <div class="info">
                 <div class="left-info ">
                     <div class="picture">
-                        <img src="../../../../../assets/user/default-user.png">
+                        <img src="../../../../assets/user/default-user.png">
                     </div>
                     <div class="bottom-info">
                         <p><strong>Name: </strong>{{ userName }}</p>
@@ -16,11 +16,11 @@
                     </div>
                 </div>
                 <div class="right-info">
-                    <p><strong>Email: </strong></p>
-                    <p><strong>City: </strong></p>
-                    <p><strong>Phone: </strong></p>
-                    <p><strong>Website: </strong></p>
-                    <p><strong>Company: </strong></p>
+                    <p><strong>Email: </strong>{{ userEmail }}</p>
+                    <p><strong>Phone: </strong>{{ userPhone }}</p>
+                    <p><strong>City: </strong>{{ userCity }}</p>
+                    <p><strong>Website: </strong>{{ userWebsite }}</p>
+                    <p><strong>Company: </strong>{{ userCompanyName }}</p>
                 </div>
             </div>
         </div>
@@ -41,6 +41,31 @@ export default {
             type: String,
             default: false,
             required: true
+        },
+        userEmail: {
+            type: String,
+            default: false,
+            required: true
+        },
+        userPhone: {
+            type: String,
+            default: false,
+            required: true
+        },
+        userCity: {
+            type: String,
+            default: false,
+            required: true
+        },
+        userWebsite: {
+            type: String,
+            default: false,
+            required: true
+        },
+        userCompanyName: {
+            type: String,
+            default: false,
+            required: true
         }
     },
     methods: {
@@ -51,6 +76,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
     @import './style.scss';
 </style>
