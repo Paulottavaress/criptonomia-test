@@ -36,7 +36,6 @@ export default {
       throw error;
     } finally {
       console.log("Loading ended getComments");
-      console.log('state after', state)
     }
   },
 };

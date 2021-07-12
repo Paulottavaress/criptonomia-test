@@ -7,7 +7,7 @@
       <div class="row">
         <div class="column">
           <div class="column-1">
-            <img src="../../../assets/blog/blog1.jpg" />
+            <img :src="this.postId % 2 === 0 ? getImgUrl('blog1.jpg') : getImgUrl('blog2.jpg') " />
           </div>
         </div>
         <div class="column">
@@ -18,9 +18,12 @@
             <h2>{{ postTitle }}</h2>
             <p class="meta">
               <i class="fas fa-user"></i> Posted by
-              <strong class="user" @click="toggleUsers">{{
-                user.name
-              }}</strong>
+              <strong
+                style="cursor: pointer"
+                class="user"
+                @click="toggleUsers"
+                >{{ user.name }}</strong
+              >
               | {{ user.email }}
             </p>
             <p>
@@ -44,10 +47,11 @@
         </div>
       </div>
     </article>
-    <Comments 
-      :postId="postId" 
+    <Comments
+      :postId="postId"
       :showComments="showComments"
       v-if="showComments"
+      :comments="comments"
     />
     <!-- <router-link to="/author/:id"></router-link> -->
     <User
@@ -72,6 +76,9 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "Post",
   components: { Comments, User },
+  computed: {
+    ...mapGetters("blog", ["posts"]),
+  },
   data() {
     return {
       showComments: false,
@@ -100,9 +107,14 @@ export default {
       required: true,
     },
     user: {
-      type: Object,
+      type: [Object, Boolean],
       default: false,
       required: false,
+    },
+    comments: {
+      type: [Array, Boolean],
+      default: false,
+      required: true,
     },
   },
   methods: {
@@ -113,6 +125,9 @@ export default {
     },
     toggleUsers() {
       this.showUsers = !this.showUsers;
+    },
+        getImgUrl(pic) {
+      return require("@/assets/blog/" + pic);
     },
   },
 };

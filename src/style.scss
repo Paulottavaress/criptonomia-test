@@ -82,6 +82,9 @@ img {
    background: #333;
    color: #fff;
 }
+.btn-dark, .btn-light {
+    cursor: not-allowed;
+}
 .btn-light, .bg-light {
    background: #f4f4f4;
    color: #333;

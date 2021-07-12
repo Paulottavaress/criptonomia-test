@@ -1,7 +1,7 @@
 <template>
     <main id="blog-post">
       <ul v-for="(post, index) in posts" :key="index">
-        <Post :userId="post.userId" :postId="post.id" :postTitle="post.title" :postBody="post.body" :user="post.user"/>
+        <Post :userId="post.userId" :postId="post.id" :postTitle="post.title" :postBody="post.body" :user="post.user" :comments="post.comments"/>
       </ul>
     </main>
 </template>

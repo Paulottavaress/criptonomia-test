@@ -6,10 +6,6 @@
           >Nomia
         </h1>
       </div>
-
-      <div class="content">
-        <h1>Criptonomia Blog</h1>
-      </div>
     </header>
 </template>
 

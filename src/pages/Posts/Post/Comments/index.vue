@@ -1,35 +1,30 @@
 <template>
   <article
     v-for="(comment, index) in comments"
+    :v-if="comments.length"
     :key="index"
     class="flex-columns flex-reverse"
-    :class="[
-      comment.id % 2 === 0 ? 'bg-dark' : 'bg-light',
-      showComments ? 'expanded' : '',
-    ]"
+    :class="[comment.id % 2 === 0 ? 'bg-dark' : 'bg-light']"
   >
     <Comment
       :commentId="comment.id"
       :commentName="comment.name"
       :commentEmail="comment.email"
       :commentBody="comment.body"
-      :comment="setComments(comment.id)"
     />
   </article>
+  <div v-if="!comments.length" class="loading">Loading...</div>
 </template>
 
 <script>
 import Comment from "./Comment";
-import {mapGetters} from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   name: "Comments",
   components: { Comment },
   computed: {
-      ...mapGetters('blog', ['getComments']),
-      setComments(id) {
-          return this.getComments(id)
-      }
+    ...mapGetters("blog", ["listComments"]),
   },
   props: {
     postId: {
@@ -42,15 +37,21 @@ export default {
       default: false,
       required: false,
     },
+    comments: {
+      type: [Array, Boolean],
+      default: false,
+      required: true,
+    },
   },
-  data() {
-    return {
-      comments: [],
-    };
-  }
 };
 </script>
 
 <style lang="scss" scoped>
-
+.loading {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  line-height: 50px;
+}
 </style>
